@@ -1,0 +1,8 @@
+
+
+Exercise 22: Using Pseudo-elements
+
+Description: 
+
+Use the '::after' pseudo-element to 
+add an asterisk (*) after all required input fields in your form.

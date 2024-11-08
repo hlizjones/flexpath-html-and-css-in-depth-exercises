@@ -1,0 +1,7 @@
+
+Exercise 15: CSS Combinators
+
+Description: 
+
+Use a descendant selector to style all <li> elements inside the 
+<nav> element by setting their display to inline and adding some padding.

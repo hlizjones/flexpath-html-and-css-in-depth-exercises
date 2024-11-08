@@ -1,0 +1,10 @@
+
+Exercise 16: 
+
+Implementing Responsive Design with Media Queries
+
+Description: 
+
+Write a media query in your CSS that changes the 
+background color of the <body> to white when the 
+viewport width is less than 600px.

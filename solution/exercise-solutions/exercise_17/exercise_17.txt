@@ -1,0 +1,9 @@
+
+Exercise 17: Using Flexbox for Layout
+
+Description: 
+
+Create a navigation bar using Flexbox. 
+
+Inside the <nav> element, arrange the links horizontally and 
+space them evenly across the container.
