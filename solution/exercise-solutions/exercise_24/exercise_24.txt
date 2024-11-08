@@ -1,11 +1,9 @@
 
-Exercise 24: The Cascade in CSS
+Exercise 24: Creating a Responsive Navigation Bar
 
 Description: 
 
-Write CSS rules that set all paragraphs to have blue text, 
-but paragraphs inside a <section> with the class 'highlight' should have green text.
+Build a responsive navigation bar that collapses 
+into a hamburger menu on small screens. 
 
-
-Ensure that the cascade and specificity result in the correct styling.
-
+Use HTML, CSS, and basic JavaScript if necessary.

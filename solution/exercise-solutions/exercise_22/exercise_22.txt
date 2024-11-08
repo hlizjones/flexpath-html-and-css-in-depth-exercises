@@ -1,8 +1,25 @@
 
-
-Exercise 22: Using Pseudo-elements
+Exercise 22: Understanding CSS Specificity
 
 Description: 
 
-Use the '::after' pseudo-element to 
-add an asterisk (*) after all required input fields in your form.
+Explain why an element with an 
+inline style style="color: red;" will have red text even 
+if an external CSS file sets the color to blue for that element.
+
+
+Answer:
+
+Inline styles have higher specificity than 
+external stylesheets because they are applied directly to the element. 
+
+The specificity hierarchy is:
+
+- Inline styles (style attribute) – Highest specificity.
+- IDs (#id selectors).
+- Classes, attributes, and pseudo-classes (.class, [type="text"], :hover).
+- Elements and pseudo-elements (h1, ::after).
+
+
+Therefore, the inline color: red; overrides the external CSS color: blue;.
+

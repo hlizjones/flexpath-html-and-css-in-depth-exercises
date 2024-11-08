@@ -3,7 +3,15 @@ Exercise 17: Using Flexbox for Layout
 
 Description: 
 
-Create a navigation bar using Flexbox. 
+Create a navigation bar using Flexbox styling. 
 
-Inside the <nav> element, arrange the links horizontally and 
-space them evenly across the container.
+Give the <nav> element a class of 'navbar'
+
+Then in styles.css, use flexbox styling to arrange the links inside 
+the <nav> element horizontally and space them evenly across the container
+by justifying the content of the navbar and adding padding around each 
+<a> tag.
+
+Give the new navbar a dark grey background and make the link tags within
+it white using css rules.
+

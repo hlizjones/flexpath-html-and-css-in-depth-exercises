@@ -1,5 +1,4 @@
 
-
 Exercise 19: Positioning Elements with CSS
 
 Description: 

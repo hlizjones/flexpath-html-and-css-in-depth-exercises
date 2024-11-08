@@ -1,25 +1,11 @@
 
-Exercise 23: Understanding CSS Specificity
+Exercise 23: The Cascade in CSS
 
 Description: 
 
-Explain why an element with an 
-inline style style="color: red;" will have red text even 
-if an external CSS file sets the color to blue for that element.
+Write CSS rules that set all paragraphs to have blue text, 
+but paragraphs inside a <section> with the class 'highlight' should have green text.
 
 
-Answer:
-
-Inline styles have higher specificity than 
-external stylesheets because they are applied directly to the element. 
-
-The specificity hierarchy is:
-
-- Inline styles (style attribute) – Highest specificity.
-- IDs (#id selectors).
-- Classes, attributes, and pseudo-classes (.class, [type="text"], :hover).
-- Elements and pseudo-elements (h1, ::after).
-
-
-Therefore, the inline color: red; overrides the external CSS color: blue;.
+Ensure that the cascade and specificity result in the correct styling.
 

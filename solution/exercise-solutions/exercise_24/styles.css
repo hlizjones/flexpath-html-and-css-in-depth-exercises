@@ -114,3 +114,51 @@ p {
 .highlight p {
   color: green;
 }
+
+.responsive-nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.responsive-nav .menu-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+.responsive-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.responsive-nav li {
+  flex: 1;
+}
+
+.responsive-nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .responsive-nav .menu-icon {
+    display: block;
+  }
+  
+  .responsive-nav ul {
+    display: none;
+    flex-direction: column;
+  }
+}
+
+.show {
+  display: flex !important;
+  flex-direction: column;
+}
