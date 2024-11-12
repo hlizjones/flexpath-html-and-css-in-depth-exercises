@@ -17,7 +17,11 @@ files and styling them with CSS.
    and create your html and css files inside of there
 3. To test your code, you will just open your created .html files in your web browser
    and check that the rendered (displayed) contents meet the exercise requirements.
-   We have provided you with a video showing how to do this.
+   We have provided you with a video `open-html-file-in-browser.mp4` showing how to do this.
+   
+   You will right click the file and select either "Reveal in Finder" (Mac) or
+   "Open in File Explorer" (Windows). Then, right-click the .html file and 
+   select "Open With". Then select your web browser to open the file.
 
 
 Exercise solutions are in the `/solution` folder
