@@ -23,6 +23,8 @@ files and styling them with CSS.
    "Open in File Explorer" (Windows). Then, right-click the .html file and 
    select "Open With". Then select your web browser to open the file.
 
+VIDEO DISCLAIMER - You will need to clone the repo to your local device before
+you can watch the .mp4 file since GitHub does not support watching it from here.
 
 Exercise solutions are in the `/solution` folder
 
