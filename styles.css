@@ -1,0 +1,159 @@
+body {
+    background-color: #e7f3e7;
+}
+
+header{
+    text-align: center;
+    padding: 50px;
+    background-image: url(header-image.png);
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h2, h3 {
+   color: #0c5f1f;
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#main-title {
+    font-size: 36px;
+}
+
+
+/* nav ul li {
+    display: inline;
+    padding: 20px;
+    border: solid;
+} */
+
+@media (max-width: 600px) {
+    body {
+        background-color: #ffffff;
+}
+}
+
+#main {
+    border: #0c5f1f 2px solid;
+    padding: 20px;
+    margin: 20px;
+    
+}
+
+.hobbies {
+    color:#0c5f1f;
+}
+
+input[type="text"] {
+    border: solid 2px #0c5f1f;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#gallery img{
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+footer {
+background-color: #0c5f1f;
+padding: 10px;
+margin-top: auto;
+width: auto;
+text-align: center;
+}
+
+/* a:visited {
+    color: plum;
+} */
+
+p {
+    color: royalblue
+}
+
+#highlight p {
+    color: #0c5f1f;
+}
+
+footer p {
+    color: #ffffff
+}
+
+@media (min-width: 600px) {
+
+button {
+    display: none;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0c5f1f;
+}
+
+#navbar a {
+    color: #ffffff;
+    width: 100%;
+    padding: 20px 60px;
+    text-decoration: none;
+
+}
+
+#navbar a:hover{
+    transition-delay: 0.3s;
+    background-color: #92ba9c;
+}
+}
+
+@media (max-width: 600px) {
+
+    button{
+        position: fixed;
+        top: 0;
+        right:0;
+        height: 50px;
+        width: 50px;
+        background-color: #0c5f1f;
+        color: #ffffff;
+    }
+
+    #navbar {
+        display: flex;
+        height: 200px; 
+        width: 100%;
+        background-color: #0c5f1f;
+        justify-content: space-around;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -600px;
+    }
+    
+    #navbar a {
+        color: #ffffff;
+        width: 100%;
+        text-decoration: none;
+    }
+    
+    #navbar a:hover{
+        transition-delay: 0.3s;
+        background-color: #92ba9c;
+    }
+    }

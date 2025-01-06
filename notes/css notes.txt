@@ -1,0 +1,385 @@
+CSS: specifies design; how HTML should be displayed
+-Usually HTML and CSS each have their own file
+
+
+CCS Rules:
+-Stylesheet will contain rules that apply to html elements
+-Syntax
+
+    .header {
+        color: red;
+        border: 2px #c87d52 solid;
+    }
+
+        SELECTOR specifies which html elements should be targeted by CSS rule
+        ex: .header is SELECTOR
+        style will be apliied on html elements with class attribute with value header
+    
+    DECLARATION is a PROPERTY and a VALUE seperated by a colon typically ended with a semi-colon
+        border is PROPERTY and 2px #c87d52 solid is VALUE
+        border: 2px #c87d52 solid is a DECLARATION
+
+
+Linking Stylesheets:
+
+    Style element in header or stylesheet file that is linked in header
+
+                index.html 
+
+                <head>
+                <link rel="stylesheet"
+                href="styles. css">
+                
+                (link to separate stylesheet: 
+                rel=  defines relationship between these two files -> ie the relationship is the linked file is a stylesheet
+                href= contains name/url of file to link -> ie points to the styles.css; in this example, the link assumes the linked file is in the same folder
+                
+                Need to use a relative if linked file is not in the same folder
+                
+                Can have mult CSS files linked)
+
+                </head>
+
+
+                styles.css                (linked stylesheet)
+
+                body {
+                margin-top: 0px;
+                }
+                #mainheader {
+                background-color: #c87d52;
+                }
+
+
+Applying Styles:
+
+    -Selector specified which html elements are targeted/selected by rule
+    -Matches the value of the class attribute to the selector
+        ex: .header is SELECTOR
+            style will be apliied on html elements with class attribute with value header
+
+            index.html
+
+                <div class="header">
+
+                ...
+
+                </div>
+
+            styles.css
+
+                body {
+                margin-top: 0px;
+                }
+                .header {                       (matches value of div class so div will have this style)
+                color: red;
+                border: 2px #c87d52 solid;
+                }
+
+Cascading:
+    -HTML page structure is like a tree
+    -DOM (Document Object Model): this tree-like structure
+
+                                    html
+                                     |
+                                    body (font-size:12px;)
+                             ________|________
+             (color: green;)h1           1st div (color:red;)
+                                         ____|____
+                      (padding: 10px;) 2nd div       p (font-size: 10px; color:blue;)
+
+    -Works in cascading way -> Root level will set style for branches unless element overules this
+        ex: 1st div will have 12px font-size bc of body and be red bc of itself
+            p is a conflict and will overrule the inherited style so it will be blue with 10px font size
+
+    -Defaults can also overrule -> they have a higher priority in the cascade
+        ex: h1 has a default font size so it will not inherite the font-size from body
+
+Selectors:
+-Scans html file and applies style to matches
+    -Matches the value of the class attribute to the selector
+-Can apply to more than one element
+-Single html element can have mult styles applied -> cascading decides what the style will be in case of conflict
+
+-Types:
+    -Element: uses tag name as selector 
+        ex: this h2 selector applies to all h2 elements
+
+            h2 {
+                font-weight: bold;
+            }
+
+    -ID: can give element an ID using ID attrtibute
+        -used to apply unique style to one element w/ matching ID -> use on one element per page (use class for mult elements)
+        -can have mult unique IDs on one page, but each ID should be unique to the specific element it is assigned to
+        -syntax # in front of header
+        ex:
+            styles.css
+
+                #header {
+                color: red;
+                border: #c87d52 2px solid;
+                }
+
+            index.html
+                <div id="header">
+
+    -Class: class attribute marks elements of a related type
+        -used to select mult elements and apply style to all
+        -syntax . in front of header
+        ex:
+            styles.css
+
+                .header {
+                color: red;
+                border: #c87d52 2px solid;
+                }
+
+            index.html
+                <div class="header">
+
+    -Attribute: searches for attribute on item -> either presence of attribute or value of attribute
+        -  syntax [] around attribute
+        ex: selects all links with title attribute specified
+
+            a[title] {          (links are represented by a ->short for anchor)
+                color:red;
+            }
+            
+    -Universal: applies to all elements
+        -syntax *
+        ex: 
+            * {
+                padding: 0;
+            }
+
+CSS Combinators:
+    -Combine selectors to get more specific
+
+    -Descendent: matches all elements that are descendents of other elements
+        -Mult levels of nesting in btw parent and descendant is fine
+        -Syntax: 
+        
+            parent descendant {
+            /* styles */
+            }
+
+        ex:
+            .main a {           (Selects all a's that are inside elements with main class applied)
+            color: red;
+
+            }
+
+    -Child: matches if direct child element (the immmediate descendant of the parent)
+        -
+        -Syntax: 
+
+            parent > child {
+            /* styles */
+            }
+
+        ex1:
+            .main > a {     (Selects all a's that are a direct child of element with main class)
+            color: red;
+
+            }
+
+        ex2:
+            styles.css
+
+                div > .header {
+                color: red;
+                }
+
+            index.html
+                <div>
+                    <div class="header">Welcome</div>
+                </div>
+
+    -Either/Or
+        -Syntax: comma
+
+            .main, .header {        (Applied style to elements with eiher main class OR header class)
+            color: red;
+
+            }
+
+Pseudo Classes:
+    -Selects element based on its state -> style changes based on state
+    -When you hover your mouse over something on the interenet and it changes color, it is bc that element changed its state
+    -Syntax: Regular Selector : State
+
+        a: link { color : blue; }           (Unvisited link)
+        a:visited { color: red; }           (Visited link)
+        a:hover {color : green;}            (Hover over link)
+        a: active { color: red; }           (Link being selected)
+
+CSS Styles on Text: 
+    -background-color
+    -background: can change colors, images, etc
+    -font-size: px (absolute size limit) or em (relative to current font; scales better for all devices)
+    -color
+    -font-weight: for bold
+    -text-decoration: underline
+    -text-transform: uppercase or lowercase
+    -font-variant: small caps
+    -text-align: left, right, or center for horizontal alignment
+    -light-height: in rem for more space in text
+
+Custom Font:
+
+    @font-face {                    (Use @font-face rule)
+    font-family: myFont;            (Give font name with font-family property)
+    src: url(fonts/WorkSans-Bold.ttf);          (Point to the font file using src property; available as TTF or OTF file -> need to include in site)
+    }
+
+    body {
+    font-family: myFont;
+    }
+
+Creating Layout w/ CSS:
+    -CSS Box Model
+        -Box around every element:
+            -Center: content
+            -Padding: clears area around content
+            -Border: can style
+            -Margin: space btw border and other elements
+
+        example syntax {
+            padding: 10px
+            margin: 10px
+        }
+
+        more specific syntax {          (Used for margin or property)
+            margin-top: 10px
+            margin-right: 10px
+            margin-bottom: 10px
+            margin-left: 10px
+        }
+
+        shorthand syntax {              (Separate values by space; follow order of above syntax)
+            margin: 10px 10px 10px 10px
+        }
+
+        more shorthand syntax {     (1st value is top and bottom, 2nd value is left and right)
+            margin: 10px 10px
+        }
+
+        center element within parent {      (Use on inner element)
+            margin: auto
+        }
+    
+Positioning Elements on Page:
+    -Static: default; doesn't change page Positioning
+
+    -Relative: moves element based on its static/default based on left and top commands
+
+        element {
+            position: relative;
+            left: 20px;
+            top: 10px;
+        }
+
+    -Fixed: sets element in fixed position; not affect by scrolling
+        -Removed from normal flow of doc so will move the other elements closer together
+
+        element {
+            position: fixed;
+            bottom: 0;          (Positions element in bottom right corner)
+            right: 0;
+        }
+
+    -Absolute: positioned relative to its nearest positioned ancestor
+        -Places it on/"locks it onto the ancestor 
+        -Nearest anceestor must have position set
+
+        element {
+            position: absolute;
+            top: 10px;
+            right: 20 px; 
+        }
+
+    -Sticky: Originally positioned relatively but when reached a certain point in scrolling, it will use a fixed position
+        -While stay on the page when scrolling
+
+        element {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+        }
+
+    -Float: Allows other elements to wrap around it
+        -Floats an element to left or right in its container and other content (ie text/images) floats around it
+        -ex: Can "mix" image in with text
+        -Values:
+            -Left
+            -Right
+            -None
+            -Inherit: takes float value from parent
+
+            element {
+                float: right;
+            }
+
+    -Clear: Prevents element from being floated 
+
+Adding Images: Images are referenced -> embedded content, it's not actually on the page
+    -Relative: Located on same server images/image1.png
+    -Absolute: Complete URL, on another server
+
+    -Image Types:
+        -.gif: transparent, 256 colors, animated
+        -.png: more colors, transparent -> icons, logos
+        -.jpg or .jpeg: 16.7 million colors, not transparent -> photos
+        -.svg: vector-based, scales infinitely
+            -vector based are lines, points, & mathematical points that remain sharp when zoomed unlike the others with are betmap-based (pixel based)
+
+        <img 
+        src="images/products/cheesecakesmall.jpg"           (source)
+        alt="Cheesecake with strawberry"                    (alternative text for screen readers)
+        width="300"
+        height="300"       (does not influence actual size but image rendering; if you only use width or height og aspect ratio kept, if both, og aspect ration not kept)  
+        >          (self-closing tag)   
+
+    -Use CSS class to size 
+
+        .menu-logo {            /*sets size of img*/
+            width: 175px;
+            margin-right:30px;
+        }
+
+    -Figure element:
+        <figure>
+        -container for image or graph within a document -> groups image/graph w/ caption -> semantics relates img to content
+        -doesn't replace img
+        -can have caption through <figcaption>
+                <figure>
+                <img src="applepie.jpg"
+                alt="An apple pie"
+                width="300" height="150">
+                <figcaption> We love our apple pies!</figcaption>
+                </figure>
+
+    -Favicon: image shown in tab 
+        -Used for favs/bookmarks
+        -must be png, gif, or icons
+        -must be 32x32px (preferred) or 16x16px
+        -put in head
+
+        <link rel="icon" type="image/png" href="favicon.png">
+
+-Styling Form
+    -typically enhances through borders
+    -properties:
+        border-color
+        border-width
+        border-style: solid, dotted, dashed, double
+        border-radius: adds rounded bolder
+        
+The specificity hierarchy is:
+
+- Inline styles (style attribute) – Highest specificity.
+- IDs (#id selectors).
+- Classes, attributes, and pseudo-classes (.class, [type="text"], :hover).
+- Elements and pseudo-elements (h1, ::after).
+

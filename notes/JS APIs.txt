@@ -1,0 +1,32 @@
+Static sites: no JS, not interactive
+                vs
+Web applications: sites w/ js, very interactive
+
+
+API wraps complex functionalities and streamlines use in a simple to use way
+    Using JS objects to interact with APIs and use their functionality w/o writting their code
+
+Examples: 
+    Geolocation (tracking user through broswer)
+    Storage 
+        Cookies:
+            limited in size (4 kB)
+            sent back and forth btw browser and server w/ every request -> affects performance if they grow large
+            expiration date
+        WebStorage:
+            not sent to server each time
+            larger amounts of data
+            no expiration date -> exists until the user deletes data
+            Local Storage: stores info in user's browser we can access later to remember login/preferences
+            Session Storage: deleted when window is closed
+            
+    Audio and video(change playbackspeed, etc)
+    Drag and drop(dragging content to other area of page)
+
+
+    window.localStorages -> localStorage is a JS global object
+    setItem(key,value) -> function to store values
+    getItem(key) -> function to retrieve 
+    removeItem(key) -> function to removeItem
+    length -> checks size of data stored
+    clear() -> function to clear all data stored

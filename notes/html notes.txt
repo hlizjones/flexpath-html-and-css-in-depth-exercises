@@ -1,0 +1,349 @@
+HTML: Markup lang that structures web page and provides content
+    -Elements (types: images, header, tables) -> tell what to create
+    -2 Tags: open <h1> indicates start and close </h1> indicates end
+    Text: in between the tags
+
+    HTML uses angle Brackets <>
+    -Tags are surrounded with < and > 
+
+    HTML uses all lower case
+    -Best practice bc HTML is case insensitive 
+
+Nesting Elements:
+    <div>
+    <h1>brows our pies</h1> (This is nested inside div)
+    </div>
+
+Attributes:
+
+    Provide extra information on Elements
+
+    <img src="pie.jpg" width="100" />
+
+    Tells what image to show on image Element w/ an Attribute
+
+    1) src is name of atttribute -> names of attrtibutes are predefined/html knows them and 2)"pie.jpg" is value 
+
+    Attributes rules:
+    -space in between mult
+    -No space btw name and value
+    -Added in opening tag
+
+Page Structure:
+
+        <! DOCTYPE html> (All html starts w/ doctype declaration: declares what type of document to broswer; tells browser what version this page is written in; must be first thing in html page)
+    <htm1> (html element: contains all code for page)
+    <head> (head element: "business card"; contains info about page)
+        <meta charset="utf-8"> (meta element: specifies add info; can have mult meta elements -> charset element is always required; used to set correct chcracter set; 1st meta element listed)
+        <title>Welcome to Bethany's Pie Shop !< /title> (title element: displays title of site and displays in search results; can only be plain text)
+    </head>
+    <body>
+        ...
+    </body>
+    </htm1>
+
+    Typical <head> elements:
+    -<title>
+    -<meta> must have one w/ charset element
+    -<link> refernces another file (ie external stylesheet)
+    -<style>
+    -<script> contains js code
+
+
+Creating Page Skeleton:
+
+    -index is a known file to any web server; file that will be served by detail when you go to the website
+
+
+Writing Body:
+
+    Headings:
+        -Built in elements to create heading/titile
+        -Six levels from 1 as largest to 6 as smallest
+        -Known to html so size is built-in Styling
+        -H1 used for page header
+            -Normally one per page
+            -Used by screen reading software to aid visually impaired readers
+        -Smaller headings are for paragraph
+        -H4,5,6 not commonly used
+
+    Paragraphs:
+        -Textual content typically is in paragraph elements
+        -Paragraphs defined blocks of contents
+        -Browser puts white space before and after paragraph -> when it encounters a <p>
+        -<br> is line break element; empty tag so doesn't need a closing tag
+        <hr> is horizontal line
+
+    Styling text:
+        
+        -Inline styling elements: only apply to text they contain
+            -Can be used but there are better ways to style text
+                -<b> bold
+                -<i> italics
+                -<em> emphasizes text
+                -<strong> content sppears stronger, by default, in bold
+                -<code> appears as computer code
+                -<samp> stands for sample, same visual effect as <code>
+                -<kbd> is used for keyboard input
+                -<var> displays a variable
+
+        -Styles: better way to add style attributes
+            -Style attribute w/ style properties
+            -Properties separated w/ semicolon
+            -Inline:
+
+                <h1 style="font-size:40px; color :#a593c2">Welcome to Bethany's Pie Shop</h1>
+
+                style is attribute
+                font-size and color are properties
+                syntax: attribute="property:value; property:value;" and goes inside angle brackets of element it is styling
+
+            -Style tag:
+
+            <head>
+                <style>
+                body {
+                margin-top: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                }
+                #mainheader {
+                background-color: #a593c2;
+                font-size: 40px;
+
+                </style>
+                </head>
+
+                }
+
+            The <style> HTML element contains CSS, which is applied to the contents of the document containing the <style> element.
+
+        Div:
+        -Elelemnt used for blocks within a page
+        -Part of html page to apply style on
+        -USed mainly for layout purposes
+        Often nested
+
+
+
+    Adding images:
+        -img tag
+        -empty element -> does not have closing tag/self-closing tag
+        -src attribute is required
+        -img tag points to an image; it's not really inserted into the html pitch
+        
+
+            <img src="cheesecake.jpg" width="500" alt="Cheese cake with strawberry" height="300"/>
+
+            src attribute="image(dragged and dropped into VS Code)"
+            set height and weight
+            alt is alt text; helpful for screen readers
+
+HTML Content Model:
+    -Semantic elements: elements carry correct meaning about/represent the content they contain
+    -Helps browsers understand which part of content means what
+    -Help SEOs, screen reading software, etc
+    -Model describe what contain is expected in an element by placing it in a content type
+        -Types can overlap like Venn Diagram
+
+    Types:
+        -Metatype: defines elements establish doc's presentation, behavior, and relationship w/ other files
+        -Flow: defines elements in body (images, links, sections)
+        -Sectioning: organizes page in logical structure
+        Phrasing: elemnts related to text
+        Heading: elements defining headers
+        Embedded: elements bringing external resources
+        Interactive: elements that are interactive (ex: link)
+
+Using Semantic Elements:
+    -BEFORE Think about which semantic elements will go in which blocks
+        -Header block
+        -Side bar block
+        -Main content block
+        -Footer block
+    
+    -Div: division
+        -Used to separat page in dif blocks
+        -Not semantic (does not give meaning to contents) used ONLY for layout
+
+    -Sectioning content category:
+        -article: standalone content (ie blog post)
+        -section: defined a section (not for layout purposes)
+        -nav: links/navigation buttons (used in header)
+        -aside: content related to main content (ie quotes, links)
+
+    -Flow content category:
+        -header: intro content
+        -footer: copyright/content
+        -main
+        -address: contact info (ie. location of story, author of doc)
+
+    -AFTER Think about which semantic elements will go in which blocks
+        -Header block: header
+        -Side bar block: aside
+        -Main content block: main, section, article
+        -Footer block: footer
+
+
+Using HTML Table:
+    -<table>
+    -made for diplaying data NOT for layout
+    -<tr> row
+    <td> column -> goes inside <tr>
+    -can have nest tables
+
+        <table>
+        <tr>
+
+        <td><img src="applepie.jpg"/></td>
+        <td>Apple pie</td>
+        </tr>
+        <tr>
+
+        <td><img src="cherrypie. jpg"/></td>
+        <td>Cherry pie</td>
+        </tr>
+        </table>
+
+    -border attribute <table border="1">
+    -can also use css attributes
+
+        table {
+        width:100%;
+        border :1px solid black;
+        border-collapse: collapse;
+        padding:20px;
+        border-spacing: 5px;
+        }
+
+    -<td rowspane="2">      (cell spans two rows; only need rowspane in first row being changed)
+    -<td colspane="2">      (cell spans two columns; only need rowspane in first col being changed)
+    -<thead> creates header
+    -<th> like <td> but for headers -> make it bold, use <td> to apply own style
+    -<tbody> creates body -> for organization
+    <tfoot> summary (think total in shopping cart)
+    <caption>
+
+    -table, th, td {            (th targets header cells, td targets data cells)
+    border: 1px solid;
+    }
+
+    tr:hover {          (tr targets row, hover is pseudo class)
+    background-color: red;
+    }
+
+Inline vs Block Elements:
+    -Inline: don't start a new line: <span>, <b>, <a>, <img>
+        -flows left to right until there is no more space then starts a new line
+        -inline that has special formatting: can be overrulled w/ css
+            -em: emphasize/bold
+            -mark: highlight
+            -q:quotation
+            -s: points to incorrect text
+            -small: small/for extra content 
+            -strong:emphasize/bold -> tells broswer its important
+            -sub: subscripts text
+            -SPAN: contains text, no semantics, like div but inline -> used to style w/ css w/o giving semantic meaning
+
+    -Block: always start a new line; take up all available width: <h1>,<div>,<p>
+
+-Lists:
+    _can nest
+    -Elements:
+        -ol: ordered (numbered)
+        -ul: unordered
+        -li: list item
+
+        <ol>
+            <li>List item</li>
+        </ol>
+
+    -Attributes:
+        -type: order should be letters or roman numerals ex type="a"
+        -start: where counter should start ex start="2"
+
+-Special Characters:
+    -Syntax: &code for special character;
+        ex: &copy; is copyright symbol
+
+-Links
+    -<a> is the anchor element
+            <a href=url.com>lickable text/image/etc</a>
+    -requires closing tag
+    -index page: used as default home page unless anything else is specified
+    -relative links point to page in same site -> the name of link is the stuff that goes behind the / in the url 
+        ex: www.url.com/nextpage
+
+    <a target="_blank">All pies</a>
+
+    « Target points to where the link will be opened; how target page will be opened ex: blank is new tab or window; self is current window or tab
+
+    <a title="An overview of all pies">
+    All pies</a>
+
+    « Used for extra information about the link; helps search engines discover page
+
+    <a hreflang="en">All pies</a>
+
+    « Use to indicate language of the target
+
+    <a download
+    href="image. jpg">Apple pie</a>
+
+    « Indicates that target starts downloaded
+
+    <a rel="value" >All pies</a>
+
+    « Describes relation between pages
+
+    -Bookmarks 
+
+        <article id="bookmark"></article>
+
+        <a href="#bookmark">All pies</a>
+
+    -Types of Links:
+        -Download: href="url.zip"
+        -Email: href="mailto:example@gmail.com"
+        -Dynamic Sites/More Complex Sites: href="pies?q=fruit" uses different parameters to link location
+
+-Contact Form
+    -info entered on form is sent to the server as key-value pairs; submit button is a trigger for browser to package data and sent to server (usually for processing ie to add to a database)
+    -server sends html appearing as confirmation to user
+    
+    <form action="contact.aspx" method="post" id="contactForm"> </form>     (method is typically get or post)
+
+        action: url of code that will handle the data on the server
+        method: how data will be sent to the server
+
+    <form action="contact. aspx" method="post" id="contactForm">
+    <label for="firstname">First Name</label>              (labels input -> w/o this the input would not have a itle the user could see; for attribute assigns the label to a input)
+    <input type="text" id="firstname" name="firstname"   (input captures data; is self closing; placeholder is text shown before user enters data)
+    placeholder="Enter your first name">                (button to submit a form)
+    <input type="submit" value="Submit">
+    </form>
+
+    <input type=textarea> allows for multi line inputs (bigger input box)
+    <input type=radio> mult choice 
+    <input type=checkbox> check one choice
+    <input type=select> creates dropdown list
+        <option value="usa">USA</option>    (creates options for dropdown lists)
+    <input type=number> enter number only
+    <input type=color> select color from palette
+    <input type=range> rendered slider to choose number in range
+    <input type=date> renders calender to select date
+
+    <fieldset> groups inputs into a form/sections of a form
+        <legend> used with fieldset to label sections of a form
+
+-iFrame
+    Embedding content directly in site (ie embedding youtube video to play on that page)
+    Possible security concern since no control over external site
+    <iframe src="url.com"></iframe>
+        can use width,height, and style attributes
+        sandbox attribute adds contraints for security issues
+            <iframe src="https://www.pluralsight.com"
+            sandbox></iframe>           (by itself very contrained)
+
+            <iframe src="https://www.pluralsight.com"
+            sandbox="allow-forms"></iframe>         (specify form allowances)

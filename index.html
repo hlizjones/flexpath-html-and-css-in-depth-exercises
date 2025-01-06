@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My First HTML Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function menu() {
+            const mediaQuery = window.matchMedia('(max-width: 600px)');
+            if (mediaQuery.matches){
+            document.getElementById("navbar").style.right="0px";
+            }
+            console.log("It worked!")
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 id="main-title">Welcome to My Page!</h1>
+        <button type="button" onclick="menu()">☰</button>
+        <nav id="navbar">
+            <a href="index.html">Home</a></li>
+            <a href="about.html">About Me</a></li>
+            <a href="contact.html">Contact</a></li>
+        </nav>
+    </header>
+    <main>
+        <div id="main">
+            <h2>About Me</h2>
+            <p>I am a creative, adventurous girl in my mid-twenties who loves to travel and is studying coding.</p>
+            <section id="highlight">
+                <h3>My Hobbies</h3>
+                <ul>
+                    <li class="hobbies">Hiking</li>
+                    <li class="hobbies">Running</li>
+                    <li class="hobbies">Reading</li>
+                </ul>
+                <p>I'm happy you visited my first website!</p>
+            </section>
+            <img src="crook.jpg" alt="An orange and white cat laying upside down" width=100%>
+            <section id="gallery">
+                <img src="gallery/three friends.jpg"
+                    alt="Three women linking arms and smiling as they walk on a boardwalk" width=400px>
+                <img src="gallery/pasta making.jpg" alt="Two women holding pasta dough and smiling" width=400px>
+                <img src="gallery/orange cat.jpg" alt="An orange cat staring into the camera" width=400px>
+                <img src="gallery/bubbles.jpg" alt="Two women smiling next to a man blowing bubbles" width=400px>
+                <img src="gallery/half marathon.jpg"
+                    alt="Two women smiling and holding signs next to a half-marathon runner" width=400px>
+                <img src="gallery/baby.jpg" alt="A women smiling down at a baby girl she's holding" width=400px>
+            </section>
+            <form action="#" method="post" id="contactForm">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter name here" required><br><br>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter email here" required><br><br>
+                    <input type="submit" value="submit">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Created by Hannah Jones.</p>
+    </footer>
+</body>
+
+</html>
